@@ -304,7 +304,7 @@
   <section id="dynamic-products" class="max-w-7xl mx-auto py-8 px-4 hidden">
     <h3 class="text-2xl font-bold text-center mb-6" id="category-title"></h3>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="product-list">
-      <!-- Тук се вкарват елементите чрез JavaScript (script.js) -->
+      <!-- Тук се вкарват елементите чрез JavaScript -->
     </div>
   </section>
 
@@ -322,7 +322,6 @@
       Разгледайте нашата ферма чрез видеа и снимки:
     </p>
     <div class="flex flex-wrap gap-4 justify-center">
-      <!-- Примерно вграждане на Facebook постове/видеа -->
       <iframe
         src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D122130260096207693%26id%3D61556230817236&show_text=true&width=500"
         width="500"
@@ -331,8 +330,8 @@
         scrolling="no"
         frameborder="0"
         allowfullscreen="true"
-        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-      </iframe>
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+      ></iframe>
 
       <iframe
         src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F294061637092708%2F&show_text=false&width=267&t=0"
@@ -343,8 +342,8 @@
         frameborder="0"
         allowfullscreen="true"
         allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-        allowFullScreen="true">
-      </iframe>
+        allowFullScreen="true"
+      ></iframe>
 
       <iframe
         src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F413651208126316%2F&show_text=false&width=267&t=0"
@@ -355,8 +354,8 @@
         frameborder="0"
         allowfullscreen="true"
         allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-        allowFullScreen="true">
-      </iframe>
+        allowFullScreen="true"
+      ></iframe>
 
       <iframe
         src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1330502327621334%2F&show_text=false&width=267&t=0"
@@ -367,8 +366,8 @@
         frameborder="0"
         allowfullscreen="true"
         allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-        allowFullScreen="true">
-      </iframe>
+        allowFullScreen="true"
+      ></iframe>
 
       <iframe
         src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2143981162602676%2F&show_text=false&width=560&t=0"
@@ -379,8 +378,8 @@
         frameborder="0"
         allowfullscreen="true"
         allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-        allowFullScreen="true">
-      </iframe>
+        allowFullScreen="true"
+      ></iframe>
     </div>
   </section>
 
@@ -490,24 +489,20 @@
         <a href="https://instagram.com/ВашатаСтраница" target="_blank" class="hover:scale-110 transition-transform">
           <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" class="w-6 h-6 inline-block">
         </a>
-        <!-- Добавете още социални икони при нужда -->
       </div>
     </div>
   </footer>
 
-  <!-- SCRIPT: Динамично зареждане на продукти + Количка + Брояч на клиенти -->
-  <!-- Тук може да включите вашия script.js или да добавите директно JavaScript -->
+  <!-- SCRIPT: Пуска брояча на клиенти + Зареждане на продуктите + Количка -->
   <script>
-    // ========== Примерен код за брояча на клиенти ==========
-    // Ако искате да се стартира броенето при скрол до секцията, можете да ползвате Intersection Observer,
-    // но тук за простота го пускаме директно при зареждане:
+    // ========== БРОЯЧ НА КЛИЕНТИТЕ ==========
     document.addEventListener('DOMContentLoaded', () => {
-      let counterElement = document.getElementById('clients-served');
+      const counterElement = document.getElementById('clients-served');
       let count = 0;
-      let target = 1250; // Примерна финална стойност
-      let speed = 20;    // Скорост на броене (по-малко = по-бързо броене)
+      const target = 1250; 
+      const speed = 20;    
 
-      let counterInterval = setInterval(() => {
+      const counterInterval = setInterval(() => {
         count++;
         counterElement.textContent = count;
         if (count >= target) {
@@ -516,11 +511,205 @@
       }, speed);
     });
 
-    // ========== Примерни функции за количка (placeholders) ==========
-    function toggleCart() {
+
+    // ========== ДАННИ ЗА ПРОДУКТИ (от втория код) ==========
+    const productsData = {
+      strawberry: {
+        title: 'Продукти от категория „Ягоди“',
+        items: [
+          {
+            id: 'strawberry-1kg',
+            name: 'Пресни Ягоди 1 кг',
+            image: 'qgodi.jpg',
+            description: 'Идеални за директна консумация или за сладкиши.',
+            price: 10.99
+          },
+          {
+            id: 'strawberry-3kg',
+            name: 'Пресни Ягоди 5 кг',
+            image: 'qgodi.jpg',
+            description: 'За по-големи нужди – по-добра цена на едро.',
+            price: 49.88
+          }
+        ]
+      },
+      raspberry: {
+        title: 'Продукти от категория „Малини“',
+        items: [
+          {
+            id: 'raspberry-1kg',
+            name: 'Пресни Малини 1 кг',
+            image: 'malinki.jpg',
+            description: 'Наситен цвят и неповторим аромат.',
+            price: 18.88
+          },
+          {
+            id: 'raspberry-2kg',
+            name: 'Пресни Малини 3 кг',
+            image: 'malinki.jpg',
+            description: 'За любителите на малините – по-изгодна оферта.',
+            price: 48.88
+          }
+        ]
+      },
+      jam: {
+        title: 'Продукти от категория „Домашно Сладко“',
+        items: [
+          {
+            id: 'jam-strawberry-300g',
+            name: 'Домашно Сладко Ягода 300г',
+            image: 'sladko1.webp',
+            description: 'Сладко от ягоди, без консерванти и оцветители.',
+            price: 5.8
+          },
+          {
+            id: 'jam-raspberry-300g',
+            name: 'Домашно Сладко Малина 300г',
+            image: 'sladko1.webp',
+            description: 'Истински малинов вкус, приготвен по стара рецепта.',
+            price: 8.80
+          }
+        ]
+      }
+    };
+
+    // Количка (масив от обекти { id, name, price, qty })
+    let cart = [];
+
+    // ========== showProducts ==========
+    function showProducts(category) {
+      if (!productsData[category]) return;
+      
+      const section = document.getElementById('dynamic-products');
+      const title = document.getElementById('category-title');
+      const productList = document.getElementById('product-list');
+
+      // Задаваме заглавие
+      title.textContent = productsData[category].title;
+      // Изчистваме списъка
+      productList.innerHTML = '';
+
+      // Обхождаме артикулите и генерираме картите
+      productsData[category].items.forEach(item => {
+        const productCard = document.createElement('div');
+        productCard.className =
+          'bg-white rounded shadow overflow-hidden hover:shadow-lg transition-shadow flex flex-col';
+
+        productCard.innerHTML = `
+          <img src="${item.image}" alt="${item.name}" class="w-full h-48 object-cover">
+          <div class="p-4 flex flex-col flex-1">
+            <h4 class="text-lg font-semibold">${item.name}</h4>
+            <p class="text-gray-600 mt-2 flex-grow">${item.description}</p>
+            <p class="font-bold text-primary mb-2">${item.price.toFixed(2)} лв</p>
+            <button class="bg-secondary text-white py-2 px-4 rounded hover:bg-green-700"
+                    onclick="addToCart('${item.id}')">
+              Добави в количката
+            </button>
+          </div>
+        `;
+        productList.appendChild(productCard);
+      });
+
+      // Показваме скритата секция и скролваме до нея
+      section.classList.remove('hidden');
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ========== addToCart ==========
+    function addToCart(productId) {
+      let foundProduct;
+      // Търсим продукта във всички категории
+      Object.values(productsData).forEach(category => {
+        category.items.forEach(item => {
+          if (item.id === productId) {
+            foundProduct = item;
+          }
+        });
+      });
+
+      if (!foundProduct) return;
+
+      // Проверка дали продуктът вече е в количката
+      const existingItem = cart.find(c => c.id === productId);
+      if (existingItem) {
+        existingItem.qty++;
+      } else {
+        cart.push({
+          id: foundProduct.id,
+          name: foundProduct.name,
+          price: foundProduct.price,
+          qty: 1
+        });
+      }
+      updateCartUI();
+      toggleCart(true); // отваряме количката при добавяне
+    }
+
+    // ========== updateCartUI ==========
+    function updateCartUI() {
+      // Обновяване на броя на артикулите
+      const cartCountEl = document.getElementById('cart-count');
+      const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+      if (totalItems > 0) {
+        cartCountEl.style.display = 'inline';
+        cartCountEl.textContent = totalItems;
+      } else {
+        cartCountEl.style.display = 'none';
+      }
+
+      // Обновяване на списъка с продукти в количката
+      const cartItemsEl = document.getElementById('cart-items');
+      cartItemsEl.innerHTML = '';
+      cart.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'flex justify-between items-center mb-4';
+
+        div.innerHTML = `
+          <div>
+            <p class="font-semibold">${item.name}</p>
+            <p class="text-sm text-gray-600">${item.price.toFixed(2)} лв</p>
+          </div>
+          <div class="flex items-center">
+            <button class="px-2 py-1 text-sm bg-gray-200 rounded-l"
+                    onclick="changeQty('${item.id}', -1)">-</button>
+            <span class="px-3 border-t border-b">${item.qty}</span>
+            <button class="px-2 py-1 text-sm bg-gray-200 rounded-r"
+                    onclick="changeQty('${item.id}', 1)">+</button>
+          </div>
+        `;
+        cartItemsEl.appendChild(div);
+      });
+
+      // Обновяване на общата сума
+      const cartTotalEl = document.getElementById('cart-total');
+      const totalPrice = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+      cartTotalEl.textContent = totalPrice.toFixed(2);
+    }
+
+    // ========== changeQty ==========
+    function changeQty(productId, delta) {
+      const item = cart.find(c => c.id === productId);
+      if (!item) return;
+
+      item.qty += delta;
+      if (item.qty <= 0) {
+        // Ако количеството стане 0, премахваме артикула
+        cart = cart.filter(c => c.id !== productId);
+      }
+      updateCartUI();
+    }
+
+    // ========== toggleCart ==========
+    function toggleCart(forceOpen = false) {
       const cartSidebar = document.getElementById('cart-sidebar');
       const cartOverlay = document.getElementById('cart-overlay');
-      // Ако е скрито, показваме го, иначе го скриваме
+
+      if (forceOpen) {
+        cartSidebar.classList.remove('translate-x-full');
+        cartOverlay.classList.remove('hidden');
+        return;
+      }
+
       if (cartSidebar.classList.contains('translate-x-full')) {
         cartSidebar.classList.remove('translate-x-full');
         cartOverlay.classList.remove('hidden');
@@ -530,29 +719,28 @@
       }
     }
 
+    // ========== showCheckout ==========
     function showCheckout() {
+      if (cart.length === 0) {
+        alert('Количката е празна.');
+        return;
+      }
+      toggleCart(); // затваряме количката
       document.getElementById('checkout-modal').classList.remove('hidden');
     }
 
+    // ========== hideCheckout ==========
     function hideCheckout() {
       document.getElementById('checkout-modal').classList.add('hidden');
     }
 
-    function submitOrder(event) {
-      event.preventDefault();
-      alert('Поръчката е изпратена успешно!');
-      // Тук можете да добавите логика за изпращане на формата
-      hideCheckout();
-      toggleCart();
-    }
-
-    // ========== Функция за превключване на полетата за доставка ==========
+    // ========== toggleDeliveryFields ==========
     function toggleDeliveryFields() {
       const addressFields = document.getElementById('address-fields');
       const officeFields = document.getElementById('office-fields');
-      const deliveryToAddress = document.getElementById('deliveryToAddress').checked;
+      const toAddress = document.getElementById('deliveryToAddress').checked;
 
-      if (deliveryToAddress) {
+      if (toAddress) {
         addressFields.classList.remove('hidden');
         officeFields.classList.add('hidden');
       } else {
@@ -561,74 +749,61 @@
       }
     }
 
-    // ========== Функция за превключване на полетата за плащане с карта ==========
+    // ========== togglePaymentFields ==========
     function togglePaymentFields() {
       const cardFields = document.getElementById('card-fields');
-      const paymentCOD = document.getElementById('paymentCOD').checked;
-
-      if (paymentCOD) {
-        cardFields.classList.add('hidden');
-      } else {
+      const payCard = document.getElementById('paymentCard').checked;
+      if (payCard) {
         cardFields.classList.remove('hidden');
+      } else {
+        cardFields.classList.add('hidden');
       }
     }
 
-    // ========== Примерна функция за показване на продукти по категории ==========
-    function showProducts(category) {
-      const dynamicSection = document.getElementById('dynamic-products');
-      const categoryTitle = document.getElementById('category-title');
-      const productList = document.getElementById('product-list');
-      
-      // Пример: разчистваме предишните продукти
-      productList.innerHTML = '';
+    // ========== submitOrder ==========
+    function submitOrder(e) {
+      e.preventDefault();
 
-      let productsData = [];
-      if (category === 'strawberry') {
-        categoryTitle.textContent = 'Свежи Ягоди';
-        productsData = [
-          { name: 'Ягоди 1 кг', price: '6.00 лв' },
-          { name: 'Ягоди 2 кг', price: '11.00 лв' },
-          { name: 'Ягоди 5 кг', price: '25.00 лв' }
-        ];
-      } else if (category === 'raspberry') {
-        categoryTitle.textContent = 'Ароматни Малини';
-        productsData = [
-          { name: 'Малини 1 кг', price: '8.00 лв' },
-          { name: 'Малини 2 кг', price: '15.00 лв' },
-          { name: 'Малини 5 кг', price: '35.00 лв' }
-        ];
-      } else if (category === 'jam') {
-        categoryTitle.textContent = 'Домашно Сладко';
-        productsData = [
-          { name: 'Сладко от ягоди (350 гр)', price: '5.50 лв' },
-          { name: 'Сладко от малини (350 гр)', price: '6.00 лв' }
-        ];
+      const name = document.getElementById('customerName').value;
+      const phone = document.getElementById('customerPhone').value;
+      const email = document.getElementById('customerEmail').value;
+
+      const deliveryMethod = document.getElementById('deliveryToAddress').checked
+        ? 'Адрес'
+        : 'Офис';
+      let addressInfo = '';
+      if (deliveryMethod === 'Адрес') {
+        addressInfo =
+          'Адрес: ' +
+          document.getElementById('deliveryAddress').value +
+          ', Град: ' +
+          document.getElementById('deliveryCity').value;
+      } else {
+        addressInfo = 'Офис: ' + document.getElementById('officeLocation').value;
       }
 
-      // Генерираме HTML за продуктите
-      productsData.forEach(prod => {
-        const div = document.createElement('div');
-        div.className = 'border rounded p-4 text-left bg-white shadow hover:shadow-lg transition-shadow';
-        div.innerHTML = `
-          <h4 class="text-lg font-bold mb-2">${prod.name}</h4>
-          <p class="text-primary font-semibold mb-4">${prod.price}</p>
-          <button class="bg-secondary text-white px-4 py-2 rounded hover:bg-green-600"
-                  onclick="addToCart('${prod.name}','${prod.price}')">
-            Добави в количката
-          </button>
-        `;
-        productList.appendChild(div);
-      });
+      const paymentMethod = document.getElementById('paymentCOD').checked
+        ? 'Наложен платеж'
+        : 'Карта';
 
-      dynamicSection.classList.remove('hidden');
-      // Скрол до динамичната секция
-      dynamicSection.scrollIntoView({ behavior: 'smooth' });
-    }
+      alert(`
+Поръчка от: ${name}
+Телефон: ${phone}
+Имейл: ${email}
 
-    // ========== Примерна функция за добавяне в количката ==========
-    function addToCart(productName, productPrice) {
-      alert(`Добавихте "${productName}" (${productPrice}) към количката!`);
-      // Тук добавете реална логика за обновяване на количката...
+Доставка: ${deliveryMethod}
+${addressInfo}
+
+Плащане: ${paymentMethod}
+
+Благодарим за Вашата поръчка!
+      `);
+
+      // Изчистваме формата, затваряме модала и количката
+      e.target.reset();
+      hideCheckout();
+      cart = [];
+      updateCartUI();
     }
   </script>
 </body>
