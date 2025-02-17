@@ -6,16 +6,16 @@ const productsData = {
       {
         id: 'strawberry-1kg',
         name: 'Пресни Ягоди 1 кг',
-        image: 'images/qgoda.jpg',
+        image: 'qgodi.jpg',
         description: 'Идеални за директна консумация или за сладкиши.',
-        price: 6.99
+        price: 10.99
       },
       {
         id: 'strawberry-3kg',
-        name: 'Пресни Ягоди 3 кг',
-        image: 'images/qgoda.jpg',
+        name: 'Пресни Ягоди 5 кг',
+        image: 'qgodi.jpg',
         description: 'За по-големи нужди – по-добра цена на едро.',
-        price: 18.99
+        price: 49.88
       }
     ]
   },
@@ -25,16 +25,16 @@ const productsData = {
       {
         id: 'raspberry-1kg',
         name: 'Пресни Малини 1 кг',
-        image: 'images/malina.webp',
+        image: 'malinki.jpg',
         description: 'Наситен цвят и неповторим аромат.',
-        price: 7.99
+        price: 18.88
       },
       {
         id: 'raspberry-2kg',
-        name: 'Пресни Малини 2 кг',
-        image: 'images/malina.webp',
+        name: 'Пресни Малини 3 кг',
+        image: 'malinki.jpg',
         description: 'За любителите на малините – по-изгодна оферта.',
-        price: 14.99
+        price: 48.88
       }
     ]
   },
@@ -44,16 +44,16 @@ const productsData = {
       {
         id: 'jam-strawberry-300g',
         name: 'Домашно Сладко Ягода 300г',
-        image: 'images/sladko.png',
+        image: 'sladko1.webp',
         description: 'Сладко от ягоди, без консерванти и оцветители.',
-        price: 4.50
+        price: 5.8
       },
       {
         id: 'jam-raspberry-300g',
         name: 'Домашно Сладко Малина 300г',
-        image: 'images/sladko.png',
+        image: 'sladko1.webp',
         description: 'Истински малинов вкус, приготвен по стара рецепта.',
-        price: 5.00
+        price: 8.80
       }
     ]
   }
