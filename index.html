@@ -24,7 +24,7 @@
   </script>
 </head>
 
-<body class="bg-gray-100 text-gray-900 font-sans">
+<body class="bg-gray-100 text-gray-900 font-sans relative">
   <!-- HEADER / NAVBAR -->
   <header class="w-full bg-primary text-white shadow fixed top-0 left-0 z-50">
     <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
@@ -33,10 +33,21 @@
       </h1>
       
       <!-- Примерно меню -->
-      <nav class="hidden md:flex items-center space-x-4">
+      <nav class="hidden md:flex items-center space-x-6">
         <a href="#products" class="hover:underline">Продукти</a>
         <a href="#about" class="hover:underline">За нас</a>
+        <a href="#reviews" class="hover:underline">Отзиви</a>
         <a href="#contact" class="hover:underline">Контакти</a>
+
+        <!-- Линкове към социални мрежи -->
+        <div class="flex space-x-4 items-center ml-6">
+          <a href="https://facebook.com/ВашатаСтраница" target="_blank" class="hover:scale-110 transition-transform">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="w-6 h-6">
+          </a>
+          <a href="https://instagram.com/ВашатаСтраница" target="_blank" class="hover:scale-110 transition-transform">
+            <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" class="w-6 h-6">
+          </a>
+        </div>
 
         <!-- Icon за количката -->
         <div class="relative cursor-pointer" onclick="toggleCart()">
@@ -208,7 +219,7 @@
   <!-- HERO SECTION -->
   <section
     class="relative flex items-center justify-center h-screen bg-cover bg-center"
-    style="background-image: url('qgodi.jpg');"
+    style="background-image: url('images/qgodi.jpg');"
   >
     <div class="absolute inset-0 bg-black bg-opacity-40"></div>
     <div class="relative z-10 text-center text-white p-4">
@@ -241,7 +252,7 @@
         onclick="showProducts('strawberry')"
       >
         <img
-          src="qgodi.jpg"
+          src="images/qgoda.jpg"
           alt="Ягоди"
           class="w-full h-48 object-cover group-hover:scale-105 transition-transform"
         />
@@ -259,7 +270,7 @@
         onclick="showProducts('raspberry')"
       >
         <img
-          src="malinki.jpg"
+          src="images/malinki.jpg"
           alt="Малини"
           class="w-full h-48 object-cover group-hover:scale-105 transition-transform"
         />
@@ -277,7 +288,7 @@
         onclick="showProducts('jam')"
       >
         <img
-          src="sladko1.webp"
+          src="images/sladko1.webp"
           alt="Домашно Сладко"
           class="w-full h-48 object-cover group-hover:scale-105 transition-transform"
         />
@@ -295,7 +306,7 @@
   <section id="dynamic-products" class="max-w-7xl mx-auto py-8 px-4 hidden">
     <h3 class="text-2xl font-bold text-center mb-6" id="category-title"></h3>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="product-list">
-      <!-- Тук се вкарват елементите чрез JavaScript -->
+      <!-- Тук се вкарват елементите чрез JavaScript (script.js) -->
     </div>
   </section>
 
@@ -312,19 +323,126 @@
     <p class="text-lg text-gray-700 text-center mb-6">
       Разгледайте нашата ферма чрез видеа и снимки:
     </p>
-    <div class="flex justify-center">
-      <!-- Примерно вграждане на Facebook пост -->
+    <div class="flex flex-wrap gap-4 justify-center">
+      <!-- Примерно вграждане на Facebook постове/видеа -->
       <iframe
-        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto.php%3Ffbid%3D122130259982207693&show_text=false&width=500"
+        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3D122130260096207693%26id%3D61556230817236&show_text=true&width=500"
         width="500"
-        height="650"
+        height="373"
         style="border:none;overflow:hidden"
-        scrolling="yes"
+        scrolling="no"
+        frameborder="0"
+        allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+      </iframe>
+
+      <iframe
+        src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F294061637092708%2F&show_text=false&width=267&t=0"
+        width="267"
+        height="476"
+        style="border:none;overflow:hidden"
+        scrolling="no"
         frameborder="0"
         allowfullscreen="true"
         allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-      >
+        allowFullScreen="true">
       </iframe>
+
+      <iframe
+        src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F413651208126316%2F&show_text=false&width=267&t=0"
+        width="267"
+        height="476"
+        style="border:none;overflow:hidden"
+        scrolling="no"
+        frameborder="0"
+        allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        allowFullScreen="true">
+      </iframe>
+
+      <iframe
+        src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1330502327621334%2F&show_text=false&width=267&t=0"
+        width="267"
+        height="476"
+        style="border:none;overflow:hidden"
+        scrolling="no"
+        frameborder="0"
+        allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        allowFullScreen="true">
+      </iframe>
+
+      <iframe
+        src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2143981162602676%2F&show_text=false&width=560&t=0"
+        width="560"
+        height="314"
+        style="border:none;overflow:hidden"
+        scrolling="no"
+        frameborder="0"
+        allowfullscreen="true"
+        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        allowFullScreen="true">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- REVIEWS / TESTIMONIALS SECTION -->
+  <section id="reviews" class="bg-white py-16 px-4">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8">Отзиви от Доволни Клиенти</h2>
+      
+      <!-- Брояч на "брой клиенти" (интерактивен) -->
+      <div class="text-center mb-6">
+        <p class="text-xl text-gray-700">Обслужени клиенти до момента:</p>
+        <span id="clients-served" class="text-4xl font-bold text-primary">0</span>+
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Примерен отзив #1 -->
+        <div class="bg-gray-100 rounded shadow p-6">
+          <div class="flex items-center mb-2">
+            <img src="https://i.pravatar.cc/40?img=1" alt="client1" class="rounded-full mr-3" />
+            <h4 class="text-lg font-semibold">Иван Петров</h4>
+          </div>
+          <div class="text-yellow-500 mb-2">
+            <!-- Звездички -->
+            ★★★★★
+          </div>
+          <p class="text-gray-700">
+            „Плодовете са винаги свежи и ароматни. Опитах ягодите и малините – вкусовете са страхотни! Препоръчвам на всички!“
+          </p>
+        </div>
+
+        <!-- Примерен отзив #2 -->
+        <div class="bg-gray-100 rounded shadow p-6">
+          <div class="flex items-center mb-2">
+            <img src="https://i.pravatar.cc/40?img=2" alt="client2" class="rounded-full mr-3" />
+            <h4 class="text-lg font-semibold">Мария Георгиева</h4>
+          </div>
+          <div class="text-yellow-500 mb-2">
+            ★★★★★
+          </div>
+          <p class="text-gray-700">
+            „Страхотно обслужване, винаги навременна доставка. Домашното сладко е уникално! Продължавайте така!“
+          </p>
+        </div>
+
+        <!-- Примерен отзив #3 -->
+        <div class="bg-gray-100 rounded shadow p-6">
+          <div class="flex items-center mb-2">
+            <img src="https://i.pravatar.cc/40?img=3" alt="client3" class="rounded-full mr-3" />
+            <h4 class="text-lg font-semibold">Петър Димитров</h4>
+          </div>
+          <div class="text-yellow-500 mb-2">
+            ★★★★★
+          </div>
+          <p class="text-gray-700">
+            „Винаги пресни ягоди и малини, отличен вкус и бърза доставка! Следващата година пак ще си поръчам.“
+          </p>
+        </div>
+
+        <!-- Можете да добавите още отзиви тук... -->
+      </div>
     </div>
   </section>
 
@@ -365,10 +483,155 @@
   <!-- FOOTER -->
   <footer class="text-center py-6 bg-primary text-white">
     <p>© 2025 Всички права запазени | Ферма за Ягоди и Малини</p>
+    <div class="mt-2">
+      <p>Последвайте ни в социалните мрежи:</p>
+      <div class="flex justify-center space-x-4 mt-2">
+        <a href="https://facebook.com/ВашатаСтраница" target="_blank" class="hover:scale-110 transition-transform">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="w-6 h-6 inline-block">
+        </a>
+        <a href="https://instagram.com/ВашатаСтраница" target="_blank" class="hover:scale-110 transition-transform">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384063.png" alt="Instagram" class="w-6 h-6 inline-block">
+        </a>
+        <!-- Добавете още социални икони при нужда -->
+      </div>
+    </div>
   </footer>
 
-  <!-- SCRIPT: Динамично зареждане на продукти + Количка -->
-  <!-- Тук само включваме script.js -->
-  <script src="script.js"></script>
+  <!-- SCRIPT: Динамично зареждане на продукти + Количка + Брояч на клиенти -->
+  <!-- Тук може да включите вашия script.js или да добавите директно JavaScript -->
+  <script>
+    // ========== Примерен код за брояча на клиенти ==========
+    // Ако искате да се стартира броенето при скрол до секцията, можете да ползвате Intersection Observer,
+    // но тук за простота го пускаме директно при зареждане:
+    document.addEventListener('DOMContentLoaded', () => {
+      let counterElement = document.getElementById('clients-served');
+      let count = 0;
+      let target = 1250; // Примерна финална стойност
+      let speed = 20;    // Скорост на броене (по-малко = по-бързо броене)
+
+      let counterInterval = setInterval(() => {
+        count++;
+        counterElement.textContent = count;
+        if (count >= target) {
+          clearInterval(counterInterval);
+        }
+      }, speed);
+    });
+
+    // ========== Примерни функции за количка (placeholders) ==========
+    function toggleCart() {
+      const cartSidebar = document.getElementById('cart-sidebar');
+      const cartOverlay = document.getElementById('cart-overlay');
+      // Ако е скрито, показваме го, иначе го скриваме
+      if (cartSidebar.classList.contains('translate-x-full')) {
+        cartSidebar.classList.remove('translate-x-full');
+        cartOverlay.classList.remove('hidden');
+      } else {
+        cartSidebar.classList.add('translate-x-full');
+        cartOverlay.classList.add('hidden');
+      }
+    }
+
+    function showCheckout() {
+      document.getElementById('checkout-modal').classList.remove('hidden');
+    }
+
+    function hideCheckout() {
+      document.getElementById('checkout-modal').classList.add('hidden');
+    }
+
+    function submitOrder(event) {
+      event.preventDefault();
+      alert('Поръчката е изпратена успешно!');
+      // Тук можете да добавите логика за изпращане на формата
+      hideCheckout();
+      toggleCart();
+    }
+
+    // ========== Функция за превключване на полетата за доставка ==========
+    function toggleDeliveryFields() {
+      const addressFields = document.getElementById('address-fields');
+      const officeFields = document.getElementById('office-fields');
+      const deliveryToAddress = document.getElementById('deliveryToAddress').checked;
+
+      if (deliveryToAddress) {
+        addressFields.classList.remove('hidden');
+        officeFields.classList.add('hidden');
+      } else {
+        addressFields.classList.add('hidden');
+        officeFields.classList.remove('hidden');
+      }
+    }
+
+    // ========== Функция за превключване на полетата за плащане с карта ==========
+    function togglePaymentFields() {
+      const cardFields = document.getElementById('card-fields');
+      const paymentCOD = document.getElementById('paymentCOD').checked;
+
+      if (paymentCOD) {
+        cardFields.classList.add('hidden');
+      } else {
+        cardFields.classList.remove('hidden');
+      }
+    }
+
+    // ========== Примерна функция за показване на продукти по категории ==========
+    function showProducts(category) {
+      const dynamicSection = document.getElementById('dynamic-products');
+      const categoryTitle = document.getElementById('category-title');
+      const productList = document.getElementById('product-list');
+      
+      // Пример: разчистваме предишните продукти
+      productList.innerHTML = '';
+
+      let productsData = [];
+      if (category === 'strawberry') {
+        categoryTitle.textContent = 'Свежи Ягоди';
+        productsData = [
+          { name: 'Ягоди 1 кг', price: '6.00 лв' },
+          { name: 'Ягоди 2 кг', price: '11.00 лв' },
+          { name: 'Ягоди 5 кг', price: '25.00 лв' }
+        ];
+      } else if (category === 'raspberry') {
+        categoryTitle.textContent = 'Ароматни Малини';
+        productsData = [
+          { name: 'Малини 1 кг', price: '8.00 лв' },
+          { name: 'Малини 2 кг', price: '15.00 лв' },
+          { name: 'Малини 5 кг', price: '35.00 лв' }
+        ];
+      } else if (category === 'jam') {
+        categoryTitle.textContent = 'Домашно Сладко';
+        productsData = [
+          { name: 'Сладко от ягоди (350 гр)', price: '5.50 лв' },
+          { name: 'Сладко от малини (350 гр)', price: '6.00 лв' }
+        ];
+      }
+
+      // Генерираме HTML за продуктите
+      productsData.forEach(prod => {
+        const div = document.createElement('div');
+        div.className = 'border rounded p-4 text-left bg-white shadow hover:shadow-lg transition-shadow';
+        div.innerHTML = `
+          <h4 class="text-lg font-bold mb-2">${prod.name}</h4>
+          <p class="text-primary font-semibold mb-4">${prod.price}</p>
+          <button class="bg-secondary text-white px-4 py-2 rounded hover:bg-green-600"
+                  onclick="addToCart('${prod.name}','${prod.price}')">
+            Добави в количката
+          </button>
+        `;
+        productList.appendChild(div);
+      });
+
+      dynamicSection.classList.remove('hidden');
+      // Скрол до динамичната секция
+      dynamicSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ========== Примерна функция за добавяне в количката ==========
+    function addToCart(productName, productPrice) {
+      alert(`Добавихте "${productName}" (${productPrice}) към количката!`);
+      // Тук добавете реална логика за обновяване на количката...
+    }
+  </script>
 </body>
 </html>
